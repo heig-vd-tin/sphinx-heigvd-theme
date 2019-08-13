@@ -21,7 +21,7 @@ First install the theme:
 
 .. code-block:: console
 
-   $ pip install sphinx_press_theme
+   $ pip install sphinx_heigvd_theme
 
 
 On Sphinx project's ``conf.py``: set the theme name to ``press``.

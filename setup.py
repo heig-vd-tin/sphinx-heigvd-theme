@@ -1,31 +1,31 @@
 from setuptools import setup
-
+import sphinx_heigvd_theme
 with open('README.md', 'r') as fh:
     long_description = fh.read()
 
 setup(
-    name='sphinx_press_theme',
+    name='sphinx_heigvd_theme',
     version='0.4.0',
-    url='https://schettino72.github.io/sphinx_press_site/',
+    url='https://github.com/heig-vd-tin/sphinx_heigvd_site/',
     license='MIT',
-    author='Eduardo Naufel Schettino <schetino72>',
-    description='A Sphinx-doc theme based on Vuepress',
+    author='Yves Chevallier <yves.chevallier@heig-vd.ch>',
+    description='A Sphinx-doc theme on sphinx press theme',
     long_description = long_description,
-    packages=['sphinx_press_theme'],
-    package_data={'sphinx_press_theme': [
+    packages=['sphinx_heigvd_theme'],
+    package_data={'sphinx_heigvd_theme': [
         'theme.conf',
         '*.html',
         'util/*.html',
         'static/*.css',
         'static/*.js',
     ]},
-        entry_points = {
+    entry_points = {
         'sphinx.html_themes': [
-            'press = sphinx_press_theme',
+            'heigvd = sphinx_heigvd_theme',
         ]
     },
     install_requires=[
-       'sphinx>=2.0.0'
+       'sphinx >= 2.0.0'
     ],
     classifiers=[
         'Framework :: Sphinx',
@@ -43,10 +43,9 @@ setup(
         'Topic :: Documentation',
         'Topic :: Software Development :: Documentation',
     ],
-    keywords = "sphinx doc theme vue.js",
+    keywords = "sphinx doc theme heig-vd vue.js",
     project_urls = {
-        'Documentation': 'https://schettino72.github.io/sphinx_press_site/',
-        'Source': 'https://schettino72.github.io/sphinx_press_site/',
-        'Tracker': 'https://schettino72.github.io/sphinx_press_site/issues',
+        'Source': 'https://github.com/heig-vd-tin/sphinx_heigvd_site/',
+        'Tracker': 'https://github.com/heig-vd-tin/sphinx_heigvd_site/issues',
     },
 )

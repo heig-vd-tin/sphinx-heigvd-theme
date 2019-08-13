@@ -21,7 +21,9 @@ body
   padding-left $sidebarWidth
 
 .navbar
+  display flex
   position fixed
+  align-items: center
   z-index 20
   top 0
   left 0
@@ -78,6 +80,9 @@ a
   color $accentColor
   text-decoration none
 
+p
+  text-align justify
+
 p a code
   font-weight 400
   color $accentColor
@@ -97,12 +102,17 @@ blockquote
   padding-left 1rem
 
 ul, ol
-  padding-left 1.2em
+  padding-left 3em
+  line-height 1.1em
+
+li
+  line-height 1.1em
 
 strong
   font-weight 600
 
 h1, h2, h3, h4, h5, h6
+  position relative
   font-weight 600
   line-height 1.25
   .content:not(.custom) > &
@@ -151,8 +161,8 @@ hr
 table
   border-collapse collapse
   margin 1rem 0
-  display: block
-  overflow-x: auto
+  width 100%
+  overflow-x auto
 
 tr
   border-top 1px solid #dfe2e5
@@ -161,10 +171,31 @@ tr
 
 th, td
   border 1px solid #dfe2e5
-  padding .6em 1em
+  padding .5em 0.7em
+
+td > p
+  margin 0
+  padding 0
+
+th > p
+  margin 0
+  padding 0
+
+.figure
+  text-align: center
+
+.content
+  .caption
+    text-align: center
+
+.caption-number
+  font-weight 700
 
 .custom-layout
   padding-top $navbarHeight
+
+.toctree-l2
+  color #da6768
 
 .theme-container
   &.sidebar-open
@@ -179,7 +210,6 @@ th, td
     .custom-layout
       padding-top 0
 
-
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar
     .sidebar
@@ -188,3 +218,14 @@ th, td
       padding-left 0
 
 @require './mobile.styl'
+
+.section-number
+  position absolute
+  color #999
+  text-align right
+  min-width  5em
+  left -5.5em
+
+.exercise
+  border 0.3em solid #d8d6be
+  padding-left 0.5em

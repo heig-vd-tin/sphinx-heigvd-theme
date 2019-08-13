@@ -19,7 +19,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'sphinx_press_theme'
+project = 'sphinx_heigvd_theme'
 copyright = '2018, Eduardo Naufel Schettino'
 author = 'Eduardo Naufel Schettino'
 
@@ -106,7 +106,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'sphinx_press_themedoc'
+htmlhelp_basename = 'sphinx_heigvd_themedoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -133,7 +133,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sphinx_press_theme.tex', 'sphinx\\_press\\_theme Documentation',
+    (master_doc, 'sphinx_heigvd_theme.tex', 'sphinx\\_press\\_theme Documentation',
      'Eduardo Naufel Schettino', 'manual'),
 ]
 
@@ -143,7 +143,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sphinx_press_theme', 'sphinx_press_theme Documentation',
+    (master_doc, 'sphinx_heigvd_theme', 'sphinx_heigvd_theme Documentation',
      [author], 1)
 ]
 
@@ -154,8 +154,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'sphinx_press_theme', 'sphinx_press_theme Documentation',
-     author, 'sphinx_press_theme', 'One line description of project.',
+    (master_doc, 'sphinx_heigvd_theme', 'sphinx_heigvd_theme Documentation',
+     author, 'sphinx_heigvd_theme', 'One line description of project.',
      'Miscellaneous'),
 ]
 

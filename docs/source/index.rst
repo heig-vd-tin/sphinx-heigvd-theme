@@ -1,9 +1,9 @@
-.. sphinx_press_theme documentation master file, created by
+.. sphinx_heigvd_theme documentation master file, created by
    sphinx-quickstart on Mon Jul 30 11:44:38 2018.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-sphinx_press_theme
+sphinx_heigvd_theme
 ==================
 
 .. toctree::

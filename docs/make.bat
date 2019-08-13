@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=source
 set BUILDDIR=build
-set SPHINXPROJ=sphinx_press_theme
+set SPHINXPROJ=sphinx_heigvd_theme
 
 if "%1" == "" goto help
 

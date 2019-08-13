@@ -13,9 +13,9 @@ $anchorHeight = ($navbarHeight + 0.5rem)
 
 .content
    // FIXME: sphinx should provide a citation-reference?
-  .footnote-reference, .label, dt, p
-    margin-top -($navbarHeight)
-    padding-top $navbarHeight
+  // .footnote-reference, .label, dt, p
+    // margin-top -($navbarHeight)
+    // padding-top $navbarHeight
   & a:focus
     // remove outline because padding mess it up
     outline none
@@ -98,36 +98,44 @@ ul.breadcrumbs
   padding .1rem 1.5rem
   border-left-width .5rem
   border-left-style solid
+  border-radius 7px
   margin 1rem 0
   // default color
   background-color #e2e2e2
   border-color #787878
 
-  .admonition-title
-    font-weight 600
-    margin-bottom -0.4rem
   &.tip, &.hint
-    background-color #f3f5f7
     border-color #42b983
+    &.admonition-title
+      background-color #f3f5f7
   &.important, &.note
-    background-color #e5f1fb
     border-color #5faaea
+    &.admonition-title
+      background-color #e5f1fb
   &.warning, &.caution
-    background-color rgba(255,229,100,.3)
     border-color darken(#ffe564, 35%)
     color darken(#ffe564, 70%)
     .custom-block-title
       color darken(#ffe564, 50%)
     a
       color $textColor
+    &.admonition-title
+      background-color rgba(255,229,100,.3)
+      color darken(#ffe564, 70%)
   &.danger, &.error
-    background-color #ffe6e6
     border-color darken(red, 20%)
     color darken(red, 70%)
     .custom-block-title
       color darken(red, 40%)
     a
       color $textColor
+    &.admonition-title
+      background-color #ffe6e6
+      color darken(red, 70%)
+
+  .admonition-title
+    font-weight 600
+    margin-bottom -0.4rem
 
 blockquote
   margin-left -0.4rem
