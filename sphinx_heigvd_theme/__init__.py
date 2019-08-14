@@ -76,8 +76,6 @@ def add_toctree_data(app, pagename, templatename, context, doctree):
 
 
     """
-    # print(f"---------- Context\n{pagename}\n-------------\n")
-
     # start from master_doc
     master = app.env.get_doctree(app.env.config.master_doc)
 

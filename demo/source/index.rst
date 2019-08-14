@@ -3,13 +3,17 @@
 Demo
 ====
 
-Showcase of Sphinx features using **Press** theme.
+Showcase of Sphinx features using **HEIG-VD** theme.
 
-.. note:: Title
+.. math::
+
+    x_{1,2} = -b \frac{\sqrt{b^2-4ac}}{2a}
+
+.. note:: A note
 
     Some note
 
-.. hint:: Title
+.. hint:: A hint
 
     Some hint
 
@@ -18,5 +22,3 @@ Showcase of Sphinx features using **Press** theme.
 
    basic
    admonition
-   domain
-   extensions

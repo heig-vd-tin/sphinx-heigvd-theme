@@ -1,44 +1,36 @@
-A modern responsive theme for python's [Sphinx](http://www.sphinx-doc.org) documentation generator.
+# Sphinx HEIG-VD Theme
 
-See it in action on Press Theme own [website](https://schettino72.github.io/sphinx_press_site/)
+This theme is a fork of the [sphinx-press-theme](https://schettino72.github.io/sphinx_press_site/)
+based on [VuePress](https://vuepress.vuejs.org/). It uses [Vue.js](https://vuejs.org/) & [Stylus](http://stylus-lang.com/)
+managed by [webpack](https://webpack.js.org/) (through [vue-cli](https://cli.vuejs.org/)).
 
-
-This theme is based on [VuePress](https://vuepress.vuejs.org/).
-It uses [Vue.js](https://vuejs.org/) & [Stylus](http://stylus-lang.com/) managed by
-[webpack](https://webpack.js.org/) (through [vue-cli](https://cli.vuejs.org/)).
-
-
-**Press** theme is still in **BETA**.
-Contributions are welcome.
-
-## Usage
+## Installation
 
 First install the theme:
 
 ```
-$ pip install sphinx_heigvd_theme
+$ pip install git+https://github.com/heig-vd-tin/sphinx-heigvd-theme
 ```
 
-On Sphinx project's ``conf.py``: set the theme name to ``press``.
+On Sphinx project's ``conf.py``: set the theme name to ``heigvd``.
 
 ```
-html_theme = "press"
+html_theme = "heigvd"
 ```
 
 See details on [Sphinx theming docs](http://www.sphinx-doc.org/en/master/theming.html#using-a-theme).
 
-
 ## Development
 
-First build web assets:
+To contribute to this theme you should first build the web assets:
 
 ```
 cd ui
 npm run build
 ```
 
-Sphinx theme has a soft link to built assets...
-Install theme locally with `pip install -e .`.
+Sphinx theme has a soft link to built assets. Once done, install the theme locally
+with `pip install -e .`.
 
 `docs` folder contains theme's own documentantion.
 
@@ -46,12 +38,3 @@ Install theme locally with `pip install -e .`.
 cd docs
 make clean; make html
 ```
-
-
-## Website
-
-To update website:
-
-cd ../press_site
-rsync -rvi ../sphinx_vuepress_theme/docs/build/html/ .
-git add --all

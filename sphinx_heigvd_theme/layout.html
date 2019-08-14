@@ -30,9 +30,7 @@
       <link rel="canonical" href="{{ pageurl }}" />
     {%- endif %}
     {# TODO: opensearch #}
-    {%- if favicon %}
-      <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
-    {%- endif %}
+    <link rel="icon" href="{{ pathto('_static/favicon.ico', 1)}}" type="image/x-icon" />
 
     {%- include "util/linktags.html" %}
     {%- block extrahead %} {% endblock %}

@@ -6,10 +6,10 @@ with open('README.md', 'r') as fh:
 setup(
     name='sphinx_heigvd_theme',
     version='0.4.0',
-    url='https://github.com/heig-vd-tin/sphinx_heigvd_site/',
+    url='https://github.com/heig-vd-tin/sphinx-heigvd-theme',
     license='MIT',
     author='Yves Chevallier <yves.chevallier@heig-vd.ch>',
-    description='A Sphinx-doc theme on sphinx press theme',
+    description='A Sphinx-doc theme based on sphinx press theme',
     long_description = long_description,
     packages=['sphinx_heigvd_theme'],
     package_data={'sphinx_heigvd_theme': [
@@ -18,6 +18,7 @@ setup(
         'util/*.html',
         'static/*.css',
         'static/*.js',
+        'static/*.ico'
     ]},
     entry_points = {
         'sphinx.html_themes': [
@@ -45,7 +46,7 @@ setup(
     ],
     keywords = "sphinx doc theme heig-vd vue.js",
     project_urls = {
-        'Source': 'https://github.com/heig-vd-tin/sphinx_heigvd_site/',
-        'Tracker': 'https://github.com/heig-vd-tin/sphinx_heigvd_site/issues',
+        'Source': 'https://github.com/heig-vd-tin/sphinx-heigvd-theme',
+        'Tracker': 'https://github.com/heig-vd-tin/sphinx-heigvd-theme/issues',
     },
 )
