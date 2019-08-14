@@ -1,5 +1,7 @@
 # Sphinx HEIG-VD Theme
 
+[![Build Status](https://travis-ci.org/heig-vd-tin/sphinx-heigvd-theme.svg?branch=master)](https://travis-ci.org/heig-vd-tin/sphinx-heigvd-theme)
+
 This theme is a fork of the [sphinx-press-theme](https://schettino72.github.io/sphinx_press_site/)
 based on [VuePress](https://vuepress.vuejs.org/). It uses [Vue.js](https://vuejs.org/) & [Stylus](http://stylus-lang.com/)
 managed by [webpack](https://webpack.js.org/) (through [vue-cli](https://cli.vuejs.org/)).
