@@ -3,8 +3,17 @@
 sudo: required
 services: docker
 before_install:
-  - docker build -t local docker/python
+  - docker build -t sphinx-heigvd-python docker/python
   - docker pull node:12.8.0-buster
 script:
   - docker run -v "$(pwd):/srv" -w/srv node:12.8.0-buster make build
-  - docker run -v "$(pwd):/srv" -w/srv local make install demo
+  - docker run -v "$(pwd):/srv" -w/srv sphinx-heigvd-python make install demo deploy
+deploy:
+  provider: releases
+  api_key:
+    secure: wtzjWvYXLNcvTEP07ta8t2CDzmacdWleZtDPL2RJET0+2L55WbDHGT0aH9eNsLMv+Sdlq7EtlGdHhBb9JPGGKUkjFXMldDt8twbvWB6Krt6+NO/w+73lPfuvoupK5n2kAhgObMxmbF9pS5YAIUplZ6rLh6r78juqnFnkHGDFv/dRXKPrEakw34yMRcC66k4Io+wTSS0jFQTKyf7DDkxJFuKDyvjPMunT2PI2PSnJoE5FUKZX8wT7N4j69cCQrz1I4nWEyRniZLGNjTApvnsfAspOxdSR0OtJrH2YB616KFFms7Pphb7pgZ+qFq2dnp6Kfn+1cxNCyJbMuFBFbSdRUGS00IB/YE9FkCjkXY6nkxpXFeQVaqT2YJExG0H9wBU11KXUXn6b33hSMDzDC3WETEOBwWtK4PZg0N7f72CVXHOpV+vz8whYPAV3s78OlLsSLxe2xefhV2zuWCiPlXFAyMhvtQZyQ6H6INJopygWthnzq2/YMFM4MrN9XmmbJWcHwxr1yXBjyG2YcnPIwmtJ1NKbNVqU7JeChJQNCKMOalKgt1i7Ei5FhpOFSvddEgISClMuefbloAiWz6yR3Z2DA6ZPQ2bpbGjlAvggmR/VLokszKB6ulc0/LpASOuv7jcPjz4ZU5oknwSBKfIto/RpFzdSC0RV5a7E0LzhulCWbVU=
+  skip_cleanup: true
+  file_glob: true
+  file: ./dist/*
+  on:
+    tags: true
