@@ -14,7 +14,7 @@ build:
 install:
 	pip install -e .
 
-dist: build
+dist:
 	python3 setup.py sdist --formats=gztar,zip
 
 .PHONY: all build install demo
