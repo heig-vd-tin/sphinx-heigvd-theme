@@ -7,7 +7,7 @@ before_install:
   - docker pull node:12.8.0-buster
 script:
   - docker run -v "$(pwd):/srv" -w/srv node:12.8.0-buster make build
-  - docker run -v "$(pwd):/srv" -w/srv sphinx-heigvd-python make install demo deploy
+  - docker run -v "$(pwd):/srv" -w/srv sphinx-heigvd-python make install demo dist
 deploy:
   provider: releases
   api_key:
