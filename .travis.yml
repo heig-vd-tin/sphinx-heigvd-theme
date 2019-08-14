@@ -1,0 +1,15 @@
+sudo: required
+language: python
+services: docker
+
+before_install:
+  - docker build -t local-python docker/python
+  - docker pull node:12.8.0-buster
+
+script:
+  - docker run -it -v "$(pwd)/srv" -w/src node:12.8.0-buster make build
+  - docker run -it -v "$(pwd)/srv" -w/src local-python make install
+  - docker run -it -v "$(pwd)/srv" -w/src local-python make demo
+
+addons:
+  artifacts: true

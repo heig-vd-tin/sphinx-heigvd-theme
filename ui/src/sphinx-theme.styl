@@ -1,5 +1,11 @@
 @require './vuepress/styles/config'
 
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../node_modules/@fortawesome/fontawesome-free/webfonts/fa-solid-900.ttf") format("truetype"); }
+
 /* fix anchor link positioning  for fixed navbar */
 // FIXME this is not enough as it works only for section headers
 $anchorHeight = ($navbarHeight + 0.5rem)
@@ -95,47 +101,56 @@ ul.breadcrumbs
 
 /*** admonitions based on custom-blocks.styl */
 .admonition
-  padding .1rem 1.5rem
-  border-left-width .5rem
+  padding .1rem 0.5rem
+  border-left-width .4rem
   border-left-style solid
-  border-radius 7px
-  margin 1rem 0
+  border-radius 3px
+  margin 0.5rem 0
   // default color
   background-color #e2e2e2
   border-color #787878
 
   &.tip, &.hint
-    border-color #42b983
-    &.admonition-title
-      background-color #f3f5f7
+    border-color #a99992
+    background-color #fdf4f0
+    color #a99992
+    .admonition-title:before {
+        content: "\f0eb";
+    }
   &.important, &.note
-    border-color #5faaea
-    &.admonition-title
-      background-color #e5f1fb
+    border-color #569ABD
+    background-color #eaf8ff
+    color #569ABD
+    .admonition-title:before {
+        content: "\f05a";
+    }
   &.warning, &.caution
-    border-color darken(#ffe564, 35%)
-    color darken(#ffe564, 70%)
-    .custom-block-title
-      color darken(#ffe564, 50%)
-    a
-      color $textColor
-    &.admonition-title
-      background-color rgba(255,229,100,.3)
-      color darken(#ffe564, 70%)
+    border-color #e7c000
+    background-color #fffae2
+    color #e7c000
+    .admonition-title:before {
+        content: "\f071";
+    }
   &.danger, &.error
-    border-color darken(red, 20%)
-    color darken(red, 70%)
-    .custom-block-title
-      color darken(red, 40%)
-    a
-      color $textColor
-    &.admonition-title
-      background-color #ffe6e6
-      color darken(red, 70%)
+    border-color #ca415c
+    background-color #e2c9ce
+    color #964a59
+    .admonition-title:before {
+        content: "\f1e2";
 
+    }
   .admonition-title
     font-weight 600
-    margin-bottom -0.4rem
+    margin-top 0
+    margin-bottom 0.3rem
+
+  .admonition-title:before
+    font-family: "Font Awesome 5 Free";
+    display: inline-block;
+    padding-right: 5px;
+    vertical-align: middle;
+    font-size: 20px;
 
 blockquote
   margin-left -0.4rem
+

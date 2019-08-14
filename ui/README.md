@@ -1,4 +1,4 @@
-# ui
+# Theme definition (ui)
 
 ## Project setup
 ```
