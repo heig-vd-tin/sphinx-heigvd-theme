@@ -1,3 +1,5 @@
 FROM python:3.7.4-buster
 
-CMD pip install sphinx
+RUN pip install --no-cache-dir pip
+RUN pip install --no-cache-dir docutils
+RUN pip install --no-cache-dir sphinx
