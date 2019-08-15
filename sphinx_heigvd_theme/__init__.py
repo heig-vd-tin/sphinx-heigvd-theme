@@ -5,7 +5,7 @@ from sphinx.environment.collectors import EnvironmentCollector
 from sphinx import addnodes
 from sphinx.util.osutil import relative_uri
 
-__version__ = (0, 5, 1)
+__version__ = (0, 5, 2)
 
 class SimpleTocTreeCollector(EnvironmentCollector):
     """A TocTree collector that saves toctrees in a simple dict.
