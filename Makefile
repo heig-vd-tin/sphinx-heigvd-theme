@@ -15,6 +15,6 @@ install:
 	pip install -e .
 
 dist:
-	python3 setup.py sdist --formats=gztar,zip
+	python3 setup.py sdist bdist_wheel
 
 .PHONY: all build install demo

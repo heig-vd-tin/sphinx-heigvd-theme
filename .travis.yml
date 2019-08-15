@@ -9,11 +9,20 @@ script:
   - docker run -v "$(pwd):/srv" -w/srv node:12.8.0-buster make build
   - docker run -v "$(pwd):/srv" -w/srv sphinx-heigvd-python make install demo dist
 deploy:
-  provider: releases
-  api_key:
-    secure: wtzjWvYXLNcvTEP07ta8t2CDzmacdWleZtDPL2RJET0+2L55WbDHGT0aH9eNsLMv+Sdlq7EtlGdHhBb9JPGGKUkjFXMldDt8twbvWB6Krt6+NO/w+73lPfuvoupK5n2kAhgObMxmbF9pS5YAIUplZ6rLh6r78juqnFnkHGDFv/dRXKPrEakw34yMRcC66k4Io+wTSS0jFQTKyf7DDkxJFuKDyvjPMunT2PI2PSnJoE5FUKZX8wT7N4j69cCQrz1I4nWEyRniZLGNjTApvnsfAspOxdSR0OtJrH2YB616KFFms7Pphb7pgZ+qFq2dnp6Kfn+1cxNCyJbMuFBFbSdRUGS00IB/YE9FkCjkXY6nkxpXFeQVaqT2YJExG0H9wBU11KXUXn6b33hSMDzDC3WETEOBwWtK4PZg0N7f72CVXHOpV+vz8whYPAV3s78OlLsSLxe2xefhV2zuWCiPlXFAyMhvtQZyQ6H6INJopygWthnzq2/YMFM4MrN9XmmbJWcHwxr1yXBjyG2YcnPIwmtJ1NKbNVqU7JeChJQNCKMOalKgt1i7Ei5FhpOFSvddEgISClMuefbloAiWz6yR3Z2DA6ZPQ2bpbGjlAvggmR/VLokszKB6ulc0/LpASOuv7jcPjz4ZU5oknwSBKfIto/RpFzdSC0RV5a7E0LzhulCWbVU=
-  skip_cleanup: true
-  file_glob: true
-  file: ./dist/*
-  on:
-    tags: true
+  - provider: releases
+    api_key:
+      secure: wtzjWvYXLNcvTEP07ta8t2CDzmacdWleZtDPL2RJET0+2L55WbDHGT0aH9eNsLMv+Sdlq7EtlGdHhBb9JPGGKUkjFXMldDt8twbvWB6Krt6+NO/w+73lPfuvoupK5n2kAhgObMxmbF9pS5YAIUplZ6rLh6r78juqnFnkHGDFv/dRXKPrEakw34yMRcC66k4Io+wTSS0jFQTKyf7DDkxJFuKDyvjPMunT2PI2PSnJoE5FUKZX8wT7N4j69cCQrz1I4nWEyRniZLGNjTApvnsfAspOxdSR0OtJrH2YB616KFFms7Pphb7pgZ+qFq2dnp6Kfn+1cxNCyJbMuFBFbSdRUGS00IB/YE9FkCjkXY6nkxpXFeQVaqT2YJExG0H9wBU11KXUXn6b33hSMDzDC3WETEOBwWtK4PZg0N7f72CVXHOpV+vz8whYPAV3s78OlLsSLxe2xefhV2zuWCiPlXFAyMhvtQZyQ6H6INJopygWthnzq2/YMFM4MrN9XmmbJWcHwxr1yXBjyG2YcnPIwmtJ1NKbNVqU7JeChJQNCKMOalKgt1i7Ei5FhpOFSvddEgISClMuefbloAiWz6yR3Z2DA6ZPQ2bpbGjlAvggmR/VLokszKB6ulc0/LpASOuv7jcPjz4ZU5oknwSBKfIto/RpFzdSC0RV5a7E0LzhulCWbVU=
+    skip_cleanup: true
+    file_glob: true
+    file: ./dist/*
+    on:
+      tags: true
+  - provider: pypi
+    user: yves-chevallier
+    distributions: sdist bdist_wheel
+    password:
+      secure: K0XYNnK6FV+YqeeUDsZ1SYbtj9wc/c7d1yu6fVMf3HKjQtZmfdHjvyr8FZsApAhT2n2WGn9fKfmSkerww35Ngdtl6aZoWCT5iyRmN5YAydGaCMhbaSSCsR1V7tLKQ0+5Wsy6nPzm3hSNiTAGIC5+IG1U3wa9lv3vFR/cJHZbTYV2VfFkFE7z8eq8PMDPw1+VU4Wils2HDAn64uI0X/WQ7BEE7srRcDEeWLNtLNLXTnmvYOmDI4xxEaIWi6oGrh/ladPPJ5f7V8OuiLMsNfYng2XZLcBAOQQk/qHRi5p6Hs5I9AX6U8am9QvEdPvGxRQJcFevOFrPPZyu+kvHUfV7YsvummSD+9a6I0FFvL5RXSQa6Pmv1eSUEZUYlRC/8r1QmSbC9UDzPIHmB/rZZrCuD02uDDay8jt4mov7D/Z2TUNkP3YY0OU20aH3oNpZa4I1Pstji89a1YpT46j1UTD9ZvxDnFubrXl3KGQD+Whhb9OB5q2vSt7xymGBxJI3b877HQQek8mlt4a4kS6uIcmpDXPDwQmDTosxzUytQns8ME1Iz1WnQvCCDO3yUbF6tc8K9wk98f16gZ31dTL1+lPWm6HDI1VM75BdtfA1WKyq0OckTrlJgMsiy6PJoZIV/CTBq8MlSI6CpkAws6l7t+FZVNDptXXY0z7evEQ9MYS8tLw=
+    on:
+      tags: true
+      python: 3.5
+      deploy[1]:
