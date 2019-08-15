@@ -53,9 +53,12 @@ ul.page-nav
     list-style-position inside
     text-align right
     margin-right 30px
-    & li + li:before
-      content "|"
-      padding 0 1em
+    & li + li
+      float initial
+
+      :before
+        content "|"
+        padding 0 1em
 
 ul.breadcrumbs
   list-style none

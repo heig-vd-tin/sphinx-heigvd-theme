@@ -1,17 +1,15 @@
-
-
 sudo: required
 services: docker
 before_install:
-  - docker build -t sphinx-heigvd-python docker/python
-  - docker pull node:12.8.0-buster
+- docker build -t sphinx-heigvd-python docker/python
+- docker pull node:12.8.0-buster
 script:
-  - docker run -v "$(pwd):/srv" -w/srv node:12.8.0-buster make build
-  - docker run -v "$(pwd):/srv" -w/srv sphinx-heigvd-python make install demo dist
+- docker run -v "$(pwd):/srv" -w/srv node:12.8.0-buster make build
+- docker run -v "$(pwd):/srv" -w/srv sphinx-heigvd-python make install demo dist
 deploy:
   - provider: releases
     api_key:
-      secure: wtzjWvYXLNcvTEP07ta8t2CDzmacdWleZtDPL2RJET0+2L55WbDHGT0aH9eNsLMv+Sdlq7EtlGdHhBb9JPGGKUkjFXMldDt8twbvWB6Krt6+NO/w+73lPfuvoupK5n2kAhgObMxmbF9pS5YAIUplZ6rLh6r78juqnFnkHGDFv/dRXKPrEakw34yMRcC66k4Io+wTSS0jFQTKyf7DDkxJFuKDyvjPMunT2PI2PSnJoE5FUKZX8wT7N4j69cCQrz1I4nWEyRniZLGNjTApvnsfAspOxdSR0OtJrH2YB616KFFms7Pphb7pgZ+qFq2dnp6Kfn+1cxNCyJbMuFBFbSdRUGS00IB/YE9FkCjkXY6nkxpXFeQVaqT2YJExG0H9wBU11KXUXn6b33hSMDzDC3WETEOBwWtK4PZg0N7f72CVXHOpV+vz8whYPAV3s78OlLsSLxe2xefhV2zuWCiPlXFAyMhvtQZyQ6H6INJopygWthnzq2/YMFM4MrN9XmmbJWcHwxr1yXBjyG2YcnPIwmtJ1NKbNVqU7JeChJQNCKMOalKgt1i7Ei5FhpOFSvddEgISClMuefbloAiWz6yR3Z2DA6ZPQ2bpbGjlAvggmR/VLokszKB6ulc0/LpASOuv7jcPjz4ZU5oknwSBKfIto/RpFzdSC0RV5a7E0LzhulCWbVU=
+      secure: aQfM0IIsFSvqklcImGhvOJhWB/Xfu1pVQoCmof1GhibRuJHgSCHNnUDn1+duWxHTNOgPC9RPIrmqSxvRTm70kuI9feFQMMnRsr5idIAoKSVzRNq4fPj7iuAvHI2PEfB8k5a7X/abz8bNG6MuETzJJR4BBDQ5At7n+RM0CouDbrBaSjXDftvM63zsuim4vH2cBzfZf8bbhF/P+pk/4lF4yG4vvrgPBSwjY+V1CKJfmku7GV3EgHvvM84YSFaBBk9xHMXC4RI2gAfuYky9xtjZdMsRrRLrx7x9Nk7vM+dlCIRDa6ymRwo4s20546WWDjH6QgM1u0FrQCij9gnwwLBijGLxV0gxNKNTAjEhgKqj0/atbq5PT+ZZikQFjy4xIANtw81KqGQtTHDledNkBpX0UxS9FlMmisiZhKG3OnR46gK2vg8JAuwMqbCEo08RZnevpFlrArUs3PsXS78dS7NgsMJA2cAjwv8rgVbbfX2gice4y7QyTiVDWJDWt8a4HzU8afNxCgEp5kC8Zq7IOncVrHfkoWaH+GIzSpGYbVcZDjieQuxCzf3cFCwGkhPZuZB8el6dfeI1PEjSCGCw707c1dr+6erVyhWCC0sXBgKWOQXqF/tpdI83AZ+b62GSSsTOCoZJmAtCPnBwLU64kwiC6BJs68lPZpzXdhfaEVLdaAc=
     skip_cleanup: true
     file_glob: true
     file: ./dist/*

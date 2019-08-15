@@ -1,6 +1,5 @@
 <template>
   <div class="page">
-                Spinner ? <font-awesome-icon icon="coffee" size="lg" /> Spinner <font-awesome-icon icon="user-secret" />
     <slot/>
 
     <!-- <Content :custom="false"/> -->
