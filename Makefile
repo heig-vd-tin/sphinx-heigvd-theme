@@ -17,4 +17,4 @@ install:
 dist:
 	python3 setup.py sdist bdist_wheel
 
-.PHONY: all build install demo
+.PHONY: all build install demo dist
