@@ -7,18 +7,18 @@ script:
 - docker run -v "$(pwd):/srv" -w/srv node:12.8.0-buster make build
 - docker run -v "$(pwd):/srv" -w/srv sphinx-heigvd-python make install demo dist
 deploy:
-  - provider: releases
-    api_key:
-      secure: aQfM0IIsFSvqklcImGhvOJhWB/Xfu1pVQoCmof1GhibRuJHgSCHNnUDn1+duWxHTNOgPC9RPIrmqSxvRTm70kuI9feFQMMnRsr5idIAoKSVzRNq4fPj7iuAvHI2PEfB8k5a7X/abz8bNG6MuETzJJR4BBDQ5At7n+RM0CouDbrBaSjXDftvM63zsuim4vH2cBzfZf8bbhF/P+pk/4lF4yG4vvrgPBSwjY+V1CKJfmku7GV3EgHvvM84YSFaBBk9xHMXC4RI2gAfuYky9xtjZdMsRrRLrx7x9Nk7vM+dlCIRDa6ymRwo4s20546WWDjH6QgM1u0FrQCij9gnwwLBijGLxV0gxNKNTAjEhgKqj0/atbq5PT+ZZikQFjy4xIANtw81KqGQtTHDledNkBpX0UxS9FlMmisiZhKG3OnR46gK2vg8JAuwMqbCEo08RZnevpFlrArUs3PsXS78dS7NgsMJA2cAjwv8rgVbbfX2gice4y7QyTiVDWJDWt8a4HzU8afNxCgEp5kC8Zq7IOncVrHfkoWaH+GIzSpGYbVcZDjieQuxCzf3cFCwGkhPZuZB8el6dfeI1PEjSCGCw707c1dr+6erVyhWCC0sXBgKWOQXqF/tpdI83AZ+b62GSSsTOCoZJmAtCPnBwLU64kwiC6BJs68lPZpzXdhfaEVLdaAc=
-    skip_cleanup: true
-    file_glob: true
-    file: ./dist/*
-    on:
-      tags: true
-  - provider: pypi
-    user: yves-chevallier
-    distributions: sdist bdist_wheel
-    password:
-      secure: K0XYNnK6FV+YqeeUDsZ1SYbtj9wc/c7d1yu6fVMf3HKjQtZmfdHjvyr8FZsApAhT2n2WGn9fKfmSkerww35Ngdtl6aZoWCT5iyRmN5YAydGaCMhbaSSCsR1V7tLKQ0+5Wsy6nPzm3hSNiTAGIC5+IG1U3wa9lv3vFR/cJHZbTYV2VfFkFE7z8eq8PMDPw1+VU4Wils2HDAn64uI0X/WQ7BEE7srRcDEeWLNtLNLXTnmvYOmDI4xxEaIWi6oGrh/ladPPJ5f7V8OuiLMsNfYng2XZLcBAOQQk/qHRi5p6Hs5I9AX6U8am9QvEdPvGxRQJcFevOFrPPZyu+kvHUfV7YsvummSD+9a6I0FFvL5RXSQa6Pmv1eSUEZUYlRC/8r1QmSbC9UDzPIHmB/rZZrCuD02uDDay8jt4mov7D/Z2TUNkP3YY0OU20aH3oNpZa4I1Pstji89a1YpT46j1UTD9ZvxDnFubrXl3KGQD+Whhb9OB5q2vSt7xymGBxJI3b877HQQek8mlt4a4kS6uIcmpDXPDwQmDTosxzUytQns8ME1Iz1WnQvCCDO3yUbF6tc8K9wk98f16gZ31dTL1+lPWm6HDI1VM75BdtfA1WKyq0OckTrlJgMsiy6PJoZIV/CTBq8MlSI6CpkAws6l7t+FZVNDptXXY0z7evEQ9MYS8tLw=
-    on:
-      tags: true
+- provider: releases
+  api_key:
+    secure: aQfM0IIsFSvqklcImGhvOJhWB/Xfu1pVQoCmof1GhibRuJHgSCHNnUDn1+duWxHTNOgPC9RPIrmqSxvRTm70kuI9feFQMMnRsr5idIAoKSVzRNq4fPj7iuAvHI2PEfB8k5a7X/abz8bNG6MuETzJJR4BBDQ5At7n+RM0CouDbrBaSjXDftvM63zsuim4vH2cBzfZf8bbhF/P+pk/4lF4yG4vvrgPBSwjY+V1CKJfmku7GV3EgHvvM84YSFaBBk9xHMXC4RI2gAfuYky9xtjZdMsRrRLrx7x9Nk7vM+dlCIRDa6ymRwo4s20546WWDjH6QgM1u0FrQCij9gnwwLBijGLxV0gxNKNTAjEhgKqj0/atbq5PT+ZZikQFjy4xIANtw81KqGQtTHDledNkBpX0UxS9FlMmisiZhKG3OnR46gK2vg8JAuwMqbCEo08RZnevpFlrArUs3PsXS78dS7NgsMJA2cAjwv8rgVbbfX2gice4y7QyTiVDWJDWt8a4HzU8afNxCgEp5kC8Zq7IOncVrHfkoWaH+GIzSpGYbVcZDjieQuxCzf3cFCwGkhPZuZB8el6dfeI1PEjSCGCw707c1dr+6erVyhWCC0sXBgKWOQXqF/tpdI83AZ+b62GSSsTOCoZJmAtCPnBwLU64kwiC6BJs68lPZpzXdhfaEVLdaAc=
+  skip_cleanup: true
+  file_glob: true
+  file: "./dist/*"
+  on:
+    tags: true
+- provider: pypi
+  user: yves-chevallier
+  distributions: sdist bdist_wheel
+  password:
+    secure: i+7r5AssWWRXVC0nd6XtvdeljOEr62uGn1L44wlEFNdqgzjYDoWrBTWFUkIiCdFVla9Y+89+3BSc4sD7F8ryhkLGup7go9R47RJHWSOM+61Q7tAQVf8LahTsinl9Q8YoOGLTO5kUnCRMlbRZmXa7bpbv3bQWGpnM4sHqQZG9M0q06e0Bo+p2UKP6z25HR8e6IZukWxvxaYf//nLbg09ltbeUgjLGLUm+hYVta0YklLuznCaDik8yFsPJxgIg3PAGJb69eslwuf8rp2UDZHoKrfrbJaWzy4y1mshEwqStopxUM+7IdPAhVACH+w/bIGI4yZsbmgrtwz6aRxuzxh1gm0TiZ1zzmzQHv3dLcQCrOljADFyxzTtCNvc3fP9ow40h0FYQmYSxVTl+oL5yJTAOmXmleE5jlMjT2p7Q0216L53v67FUOryRd4hWWsnKUABsdl9HpsvQ9JFFmYF8cXVtVRSggHOGd6bS+pV4uajjYW5MHY8W3ot11g2pkrcJLGJrKKj9bA0FxcEx+QZQRgSm9OMc+HEopM7MN3nqfUlLcDsd3BCBV17PXTYFsnxtmxe05ytrfxvunIZ9HxFSuE/p/P/thew76Gh5VfeHZqMoRYI49TrPd4wzHBgd0Edr92hHsN4JVCXaNFBzR6iLghnt4EJZDxeHRYLFBcaVi3nXS5A=
+  on:
+    tags: true
