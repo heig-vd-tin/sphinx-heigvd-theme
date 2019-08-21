@@ -237,12 +237,22 @@ th > p
   min-width  5em
   left -5.5em
 
+@media (max-width: $MQMobile)
+  .section-number
+    position relative
+    padding-right 0.5em
+
+  .navbar
+    background-color lightgray
+    border-bottom 1px solid red
 .exercise
   padding-left 0.5em
 
   .caption
-    text-align: left
-    font-weight: 500
+    text-align left
+    font-weight 500
+    font-size 20px
+    border-bottom solid 1px #DDD
 
   .admonition
     background-color: white !important

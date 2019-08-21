@@ -22,6 +22,7 @@ Vue.component('router-link', {
   template: '<a :href="to"><slot></slot></a>',
 })
 
+
 new Vue({
   el: '#app',
   // taken from Layout.vue
@@ -48,5 +49,4 @@ new Vue({
     },
   },
 })
-
 

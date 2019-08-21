@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <slot/>
+    <slot />
 
     <!-- <Content :custom="false"/> -->
 
@@ -57,12 +57,16 @@
     <!--   </p> -->
     <!-- </div> -->
 
-    <slot name="bottom"/>
+    <slot name="bottom" />
   </div>
 </template>
 
 <script>
 //import { resolvePage, normalize, outboundRE, endingSlashRE } from './util'
+import JQuery from "jquery";
+import Clipboard from 'clipboard'
+
+var $ = JQuery;
 
 export default {
   /*
@@ -168,7 +172,7 @@ export default {
     }
   }
   */
-}
+};
 /*
 function resolvePrev (page, items) {
   return find(page, items, -1)
@@ -195,56 +199,114 @@ function find (page, items, offset) {
   }
 }
 */
+
+$(document).ready(function() {
+  $(".solution .admonition-title").click(function() {
+    $(this)
+      .parent()
+      .toggleClass("open");
+  });
+});
+
+function addCopyButtonToCode() {
+  // get all code elements
+  var allCodeBlocksElements = $("div.highlight pre");
+
+  // For each element, do the following steps
+  allCodeBlocksElements.each(function(ii) {
+    // define a unique id for this element and add it
+    var currentId = "codeblock" + (ii + 1);
+    $(this).attr("id", currentId);
+
+    // create a button that's configured for clipboard.js
+    // point it to the text that's in this code block
+    // add the button just after the text in the code block w/ jquery
+    var clipButton =
+      '<button class="btn copybtn" data-clipboard-target="#' +
+      currentId +
+      '"><img src="https://clipboardjs.com/assets/images/clippy.svg" width="13" alt="Copy to clipboard"></button>';
+    $(this).after(clipButton);
+  });
+
+  // tell clipboard.js to look for clicks that match this query
+  new Clipboard(".btn");
+}
+
+$(document).ready(function() {
+  // Once the DOM is loaded for the page, attach clipboard buttons
+  addCopyButtonToCode();
+});
 </script>
 
 <style lang="stylus">
-@import './vuepress/styles/config.styl'
-@require './vuepress/styles/wrapper.styl'
+@import './vuepress/styles/config.styl';
+@require './vuepress/styles/wrapper.styl';
 
-.page
-  padding-top $navbarHeight
-  padding-bottom 2rem
+.page {
+  padding-top: $navbarHeight;
+  padding-bottom: 2rem;
+}
 
-.page-edit
-  @extend $wrapper
-  padding-top 1rem
-  padding-bottom 1rem
-  overflow auto
-  .edit-link
-    display inline-block
-    a
-      color lighten($textColor, 25%)
-      margin-right 0.25rem
-  .last-updated
-    float right
-    font-size 0.9em
-    .prefix
-      font-weight 500
-      color lighten($textColor, 25%)
-    .time
-      font-weight 400
-      color #aaa
+.page-edit {
+  @extend $wrapper;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  overflow: auto;
 
-.page-nav
-  @extend $wrapper
-  padding-top 1rem
-  padding-bottom 0
-  .inner
-    min-height 2rem
-    margin-top 0
-    border-top 1px solid $borderColor
-    padding-top 1rem
-    overflow auto // clear float
-  .next
-    float right
+  .edit-link {
+    display: inline-block;
 
-@media (max-width: $MQMobile)
-  .page-edit
-    .edit-link
-      margin-bottom .5rem
-    .last-updated
-      font-size .8em
-      float none
-      text-align left
+    a {
+      color: lighten($textColor, 25%);
+      margin-right: 0.25rem;
+    }
+  }
 
+  .last-updated {
+    float: right;
+    font-size: 0.9em;
+
+    .prefix {
+      font-weight: 500;
+      color: lighten($textColor, 25%);
+    }
+
+    .time {
+      font-weight: 400;
+      color: #aaa;
+    }
+  }
+}
+
+.page-nav {
+  @extend $wrapper;
+  padding-top: 1rem;
+  padding-bottom: 0;
+
+  .inner {
+    min-height: 2rem;
+    margin-top: 0;
+    border-top: 1px solid $borderColor;
+    padding-top: 1rem;
+    overflow: auto; // clear float
+  }
+
+  .next {
+    float: right;
+  }
+}
+
+@media (max-width: $MQMobile) {
+  .page-edit {
+    .edit-link {
+      margin-bottom: 0.5rem;
+    }
+
+    .last-updated {
+      font-size: 0.8em;
+      float: none;
+      text-align: left;
+    }
+  }
+}
 </style>

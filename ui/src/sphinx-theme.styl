@@ -28,7 +28,7 @@ $anchorHeight = ($navbarHeight + 0.5rem)
 
 
 /* Use # as symbol for anchor headerlinks */
-h1, h2, h3, h4, h5, h6
+h1, h2, h3, h4, h5, h6, .caption
   &:hover a.headerlink
     &::after
       visibility visible
@@ -139,7 +139,7 @@ ul.breadcrumbs
     background-color #e2c9ce
     color #964a59
     .admonition-title:before {
-        content: "\f1e2";
+        content "\f1e2"
 
     }
   .admonition-title
@@ -153,6 +153,39 @@ ul.breadcrumbs
     padding-right: 5px;
     vertical-align: middle;
     font-size: 20px;
+
+.solution
+  border 1px solid #CCC
+
+  .admonition-title
+    position relative
+    cursor pointer
+
+    ~*
+      display none
+
+  .admonition-title:after
+    position absolute
+    right 0px
+    content  "⯈"
+    color #888
+
+.solution.open
+ .admonition-title
+    ~*
+      display inherit
+
+  .admonition-title:after
+    position absolute
+    right 0px
+    content  "⯈"
+    color #888
+
+  .admonition-title:after
+    position absolute
+    right 0px
+    content  "⯆"
+    color #888
 
 blockquote
   margin-left -0.4rem
