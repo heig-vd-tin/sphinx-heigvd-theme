@@ -5,7 +5,11 @@ with open('README.md', 'r') as fh:
 
 setup(
     name='sphinx_heigvd_theme',
-    version='0.5.2',
+    version_config={
+        "version_format": "{tag}.dev{sha}",
+        "starting_version": "0.1.0"
+    },
+    setup_requires=['better-setuptools-git-version'],
     url='https://github.com/heig-vd-tin/sphinx-heigvd-theme',
     license='MIT',
     author='Yves Chevallier <yves.chevallier@heig-vd.ch>',
