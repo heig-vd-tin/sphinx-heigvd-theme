@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 sphinx_heigvd_theme
-==================
+===================
 
 .. toctree::
    :maxdepth: 2
@@ -13,7 +13,6 @@ sphinx_heigvd_theme
    about
    configuration
    who
-   changes
 
 .. toctree::
    :maxdepth: 2
